@@ -12,7 +12,10 @@ const Player = (props) => {
             <div className="container">
                 <h2>{name}</h2>
                 <p>Salary: {salary}</p>
-                <button onClick={() => props.handleAddClick(props.player)}>Add <FontAwesomeIcon icon={faPlus} /></button>
+                <button onClick={(e) => {
+                    e.target.innerHTML = 'Added✔';
+                    props.handleAddClick(props.player)
+                }}>Add <FontAwesomeIcon icon={faPlus} /></button>
             </div>
         </div>
     );
